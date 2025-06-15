@@ -8,4 +8,91 @@
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
-*/
+
+/* Анимация стрелки в меню */
+@keyframes pointer {
+  from { transform: translate(0); }
+  to { transform: translate(4px); }
+}
+
+/* Анимация увеличения сердца при лайке */
+@keyframes heart {
+  from { transform: scale(1); }
+  to { transform: scale(1.5); }
+}
+
+/* Появление искр */
+@keyframes heart-sparks {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Стили для искр (изначально скрыты) */
+.sparks {
+  opacity: 0;
+}
+
+/* Анимация искр при активном состоянии */
+.like-icon.is-liked .sparks {
+  animation: heart-sparks 0.3s ease-in 0.3s 1 alternate;
+}
+
+/* Базовые стили сердца */
+.like-icon .heart {
+  transform-origin: center; /* Точка трансформации в центре */
+}
+
+/* Анимация сердца при лайке */
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+/* Стили для внутренней части сердца */
+.like-icon .core {
+  transition: fill 0.3s linear;
+  fill: var(--main-background-color);
+}
+
+/* Изменение цвета при наведении */
+.like-icon:hover .core {
+  fill: var(--accent-color);
+}
+
+/* Изменение цвета при активации */
+.like-icon:active .core {
+  fill: var(--heart-fill-color);
+}
+
+/* Финал анимации - красное сердце */
+.like-icon.is-liked .core {
+  fill: var(--heart-fill-color);
+}
+
+/* Аналогичные стили для основной части сердца */
+.like-icon .main-body {
+  transition: fill 0.3s linear 0.05s; /* Задержка для эффекта заполнения */
+  fill: var(--main-background-color);
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-fill-color);
+}
+
+/* Контур сердца */
+.like-icon .contour {
+  fill: var(--accent-color);
+  transition: fill 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s linear 0.06s;
+  fill: var(--heart-fill-color);
+}
