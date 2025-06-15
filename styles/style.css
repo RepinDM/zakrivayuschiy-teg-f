@@ -14,11 +14,9 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   padding-top: 100px;
-
   font-family: var(--main-font);
   font-variation-settings: "wght" var(--main-font-weight-text);
   color: var(--accent-color);
-
   background-color: var(--main-background-color);
   background-attachment: fixed;
   background-size: cover;
@@ -48,7 +46,6 @@
 .header-title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
-
 
 /* CARDS */
 
@@ -86,45 +83,41 @@
   border-bottom: 2px solid var(--accent-color);
 }
 
-
-
-
 .image-rotate {
-  filter: hue-rotate(0.8turn);  /* Более сильное смещение цветов */
+  filter: hue-rotate(0.8turn); /* Более сильное смещение цветов */
 }
 
 .image-invert {
-  filter: invert(100%);  /* Полная инверсия цветов */
+  filter: invert(100%); /* Полная инверсия цветов */
 }
 
 .image-opacity {
-  filter: opacity(40%);  /* Менее прозрачное */
+  filter: opacity(40%); /* Менее прозрачное */
 }
 
 .image-saturate {
-  filter: saturate(500%);  /* Максимальная насыщенность */
+  filter: saturate(500%); /* Максимальная насыщенность */
 }
 
 .image-multiple {
-  filter: opacity(70%) invert(100%) blur(2px) hue-rotate(90deg);  /* Комбинированный эффект */
+  filter: opacity(70%) invert(100%) blur(2px) hue-rotate(90deg); /* Комбинированный эффект */
 }
 
 .image-sepia {
-  filter: sepia(1);  /* Полный сепия-эффект */
+  filter: sepia(1); /* Полный сепия-эффект */
 }
 
 .image-grayscale {
-  filter: grayscale(80%);  /* Не полностью чёрно-белое */
+  filter: grayscale(80%); /* Не полностью чёрно-белое */
 }
 
 .image-contrast {
-  filter: contrast(200%);  /* Добавил новый эффект контраста */
+  filter: contrast(200%); /* Добавил новый эффект контраста */
 }
 
 .image-drop-shadow {
-  filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.7));  /* Добавил тень */
+  filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.7)); /* Добавил тень */
 }
-
 
 .card-text {
   display: flex;
@@ -279,19 +272,6 @@
   width: 39px;
   height: 39px;
   flex-shrink: 0;
-}
-
-.modal[open] {
-  max-inline-size: 355px;
-  padding: 30px;
-  border: 2px solid var(--accent-color);
-
-  color: var(--accent-color);
-  font-family: var(--accent-font);
-  line-height: 1.5;
-  text-transform: uppercase;
-
-  background: var(--main-background-color);
 }
 
 .modal[open] {

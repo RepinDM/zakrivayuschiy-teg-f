@@ -11,10 +11,10 @@
 
 /* Анимация стрелки в меню */
 @keyframes pointer {
-  from { 
+  from {
     transform: translate(0);
   }
-  to { 
+  to {
     transform: translate(4px);
   }
 }
@@ -22,20 +22,20 @@
 /* Анимация увеличения сердца при лайке */
 @keyframes heart {
   from {
-    transform: scale(1); 
-    }
+    transform: scale(1);
+  }
   to {
-    transform: scale(1.5); 
+    transform: scale(1.5);
   }
 }
 
 /* Появление искр */
 @keyframes heart-sparks {
-  from { 
-    opacity: 0; 
+  from {
+    opacity: 0;
   }
   to {
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
