@@ -11,20 +11,32 @@
 
 /* Анимация стрелки в меню */
 @keyframes pointer {
-  from { transform: translate(0); }
-  to { transform: translate(4px); }
+  from { 
+    transform: translate(0);
+  }
+  to { 
+    transform: translate(4px);
+  }
 }
 
 /* Анимация увеличения сердца при лайке */
 @keyframes heart {
-  from { transform: scale(1); }
-  to { transform: scale(1.5); }
+  from {
+    transform: scale(1); 
+    }
+  to {
+    transform: scale(1.5); 
+  }
 }
 
 /* Появление искр */
 @keyframes heart-sparks {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
 }
 
 /* Стили для искр (изначально скрыты) */
@@ -95,4 +107,30 @@
 .like-icon.is-liked .contour {
   transition: fill 0.3s linear 0.06s;
   fill: var(--heart-fill-color);
+}
+
+/* Анимация для кнопки сохранения */
+.save-button {
+  transition: transform 0.3s ease;
+}
+
+.save-button:hover {
+  transform: scale(1.05);
+}
+
+.save-button:active {
+  transform: scale(0.95);
+}
+
+/* Анимация для иконки дискеты */
+.floppy-image {
+  transition: transform 0.3s ease;
+}
+
+.save-button:hover .floppy-image {
+  transform: translateY(-2px);
+}
+
+.save-button:active .floppy-image {
+  transform: translateY(1px);
 }

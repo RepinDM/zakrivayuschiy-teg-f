@@ -295,7 +295,15 @@
 }
 
 .modal[open] {
-  gap: 30px;
+  max-inline-size: 355px;
+  padding: 30px;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: var(--main-background-color);
+  gap: 30px; /* Переносим сюда из дублирующего блока */
 }
 
 .modal::backdrop {
@@ -307,7 +315,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   gap: 20px;
   margin-bottom: 30px;
 }
@@ -321,19 +328,22 @@
 .modal-save-button {
   inline-size: 100%;
   min-width: 100%;
-  padding-top: 12.5px;
-  padding-bottom: 12.5px;
+  padding: 12.5px 0; /* Объединяем padding-top и bottom */
 }
-.save-button-icon,
-.modal-save-icon {
-  fill: currentColor; /* Цвет будет браться из родителя */
-  width: 22px; /* Размер для кнопки */
+
+/* Объединенные стили для иконок */
+.save-button-icon {
+  fill: currentColor;
+  width: 22px;
   height: 22px;
+  mix-blend-mode: difference;
 }
 
 .modal-save-icon {
-  width: 39px; /* Больший размер для модального окна */
+  fill: currentColor;
+  width: 39px;
   height: 39px;
+  flex-shrink: 0;
 }
 
 @media (width <= 375px) {
