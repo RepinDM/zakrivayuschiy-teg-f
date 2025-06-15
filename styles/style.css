@@ -258,13 +258,16 @@
   height: 22px;
   mix-blend-mode: difference;
   color: var(--text-color-button);
+  fill: currentColor;
 }
 
 .modal-save-icon {
   width: 39px;
   height: 39px;
   flex-shrink: 0;
+  fill: currentColor;
 }
+
 
 .modal[open] {
   max-inline-size: 355px;
