@@ -303,22 +303,7 @@
   padding: 12.5px 0; /* Объединяем padding-top и bottom */
 }
 
-/* Объединенные стили для иконок */
 
-.save-button-icon {
-  width: 22px;
-  height: 22px;
-  mix-blend-mode: difference;
-  color: var(--text-color-button);
-  fill: currentColor;
-}
-
-.modal-save-icon {
-  width: 39px;
-  height: 39px;
-  flex-shrink: 0;
-  fill: currentColor;
-}
 
 @media (width <= 375px) {
   .header__theme-menu {
