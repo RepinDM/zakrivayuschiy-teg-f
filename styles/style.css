@@ -11,16 +11,28 @@
 */
 
 .page {
+  /* Размеры и отступы */
   min-inline-size: 320px;
   min-block-size: 100dvb;
   padding-top: 100px;
-  font-family: var(--main-font);
-  font-variation-settings: "wght" var(--main-font-weight-text);
-  color: var(--accent-color);
-  background-color: var(--main-background-color);
+
+  /* Типографика с fallback */
+  font-family: var(--main-font, sans-serif);
+  font-variation-settings: "wght" var(--main-font-weight-text, 400);
+  color: var(--accent-color, #000000);
+
+  /* Фон с комплексным fallback */
+  background-color: var(--main-background-color, #ffffff);
+  background-image: var(
+    --background-image,
+    linear-gradient(to bottom, #e7e7e7, #1a1a1a)
+  );
   background-attachment: fixed;
   background-size: cover;
-  background-image: var(--background-image);
+
+  /* Гарантированная читаемость */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .header {
@@ -40,7 +52,8 @@
 }
 
 .logo:focus {
-  outline: none;
+  outline: 2px solid var(--accent-color, #000000);
+  outline-offset: 2px;
 }
 
 .header-title {
@@ -80,35 +93,36 @@
   object-position: center;
   inline-size: 100%;
   block-size: 100%;
-  border-bottom: 2px solid var(--accent-color);
+  /* border-bottom: 2px solid var(--accent-color); */
 }
 
-.image-rotate {
-  filter: hue-rotate(0.8turn); /* Более сильное смещение цветов */
+/* Универсальные классы фильтров */
+.filter-hue-rotate {
+  filter: hue-rotate(0.8turn);
 }
 
-.image-invert {
-  filter: invert(100%); /* Полная инверсия цветов */
+.filter-invert {
+  filter: invert(30%);
 }
 
-.image-opacity {
-  filter: opacity(40%); /* Менее прозрачное */
+.filter-opacity {
+  filter: opacity(40%);
 }
 
-.image-saturate {
-  filter: saturate(500%); /* Максимальная насыщенность */
+.filter-saturate {
+  filter: saturate(500%);
 }
 
-.image-multiple {
-  filter: opacity(70%) invert(100%) blur(2px) hue-rotate(90deg); /* Комбинированный эффект */
+.filter-multiple {
+  filter: opacity(70%) invert(100%) blur(2px) hue-rotate(90deg);
 }
 
-.image-sepia {
-  filter: sepia(1); /* Полный сепия-эффект */
+.filter-sepia {
+  filter: sepia(1);
 }
 
-.image-grayscale {
-  filter: grayscale(80%); /* Не полностью чёрно-белое */
+.filter-grayscale {
+  filter: grayscale(80%);
 }
 
 .card-text {
@@ -116,7 +130,7 @@
   flex-direction: column;
   gap: 28px;
   padding: 25px;
-
+  border-top: 2px solid var(--accent-color, #000000); /* рамка */
   font-size: 18px;
   line-height: 116.67%;
 }
@@ -157,10 +171,11 @@
   display: grid;
   padding: 0;
   border: 2px solid transparent;
-
   background: transparent;
-
   cursor: pointer;
+
+  outline: 2px solid transparent; /* Начальное состояние */
+  transition: outline 0.3s linear; /* Плавный переход */
 }
 
 .card__icon-button:focus {
@@ -168,8 +183,9 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--accent-color);
-  transition: border-color 0.3s ease;
+  /* Используем outline как основной индикатор фокуса */
+  outline: 2px solid var(--accent-color, #000000);
+  transition: outline 0.3s linear;
 }
 
 .like-icon {
@@ -259,6 +275,8 @@
   mix-blend-mode: difference;
   color: var(--text-color-button);
   fill: currentColor;
+  /* Добавлено для лучшей доступности */
+  vertical-align: middle;
 }
 
 .modal-save-icon {
@@ -268,8 +286,8 @@
   fill: currentColor;
 }
 
-
-.modal[open] {
+.modal {
+  display: none;
   max-inline-size: 355px;
   padding: 30px;
   border: 2px solid var(--accent-color);
@@ -278,7 +296,11 @@
   line-height: 1.5;
   text-transform: uppercase;
   background: var(--main-background-color);
-  gap: 30px; /* Переносим сюда из дублирующего блока */
+  gap: 30px;
+}
+
+.modal[open] {
+  display: block;
 }
 
 .modal::backdrop {
@@ -303,18 +325,17 @@
 .modal-save-button {
   inline-size: 100%;
   min-width: 100%;
-  padding: 12.5px 0; /* Объединяем padding-top и bottom */
+  padding: 10px 17px;
 }
 
-
-
 @media (width <= 375px) {
-  .header__theme-menu {
-    margin: 24px 0;
+  .header {
+    padding: 120px 14px;
+    margin-bottom: 100px;
   }
 
   .logo {
-    margin-block-start: 119px;
+    margin-block-start: 0;
   }
 
   .card {

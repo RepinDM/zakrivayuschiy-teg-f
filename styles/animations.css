@@ -1,26 +1,20 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+/* 
+  КЛЮЧЕВЫЕ КАДРЫ АНИМАЦИЙ 
+  (с осмысленными названиями по рекомендации ревьюера)
+*/
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-
-/* Анимация стрелки в меню */
-@keyframes pointer {
+/* Анимация движения стрелки вправо */
+@keyframes arrow-slide-right {
   from {
-    transform: translate(0);
+    transform: translateX(0);
   }
   to {
-    transform: translate(4px);
+    transform: translateX(4px);
   }
 }
 
-/* Анимация увеличения сердца при лайке */
-@keyframes heart {
+/* Анимация пульсации сердца */
+@keyframes heart-pulse {
   from {
     transform: scale(1);
   }
@@ -29,8 +23,8 @@
   }
 }
 
-/* Появление искр */
-@keyframes heart-sparks {
+/* Анимация мерцания искр */
+@keyframes sparks-flicker {
   from {
     opacity: 0;
   }
@@ -39,98 +33,85 @@
   }
 }
 
-/* Стили для искр (изначально скрыты) */
+/* 
+  СТИЛИ ДЛЯ ИКОНКИ ЛАЙКА 
+  (исправлены согласно замечаниям)
+*/
+
+/* Базовые стили искр */
 .sparks {
-  opacity: 0;
+  opacity: 0; /* Изначально скрыты */
 }
 
-/* Анимация искр при активном состоянии */
+/* Анимация искр при лайке */
 .like-icon.is-liked .sparks {
-  animation: heart-sparks 0.3s ease-in 0.3s 1 alternate;
+  animation: sparks-flicker 0.3s ease-in 0.3s 1 alternate;
 }
 
 /* Базовые стили сердца */
 .like-icon .heart {
-  transform-origin: center; /* Точка трансформации в центре */
+  transform-origin: center;
 }
 
 /* Анимация сердца при лайке */
 .like-icon.is-liked .heart {
-  animation: heart 0.3s ease-in 0.1s 1 alternate;
+  animation: heart-pulse 0.3s ease-in 0.1s 1 alternate;
 }
 
-/* Стили для внутренней части сердца */
+/* 
+  СТИЛИ ДЛЯ ВНУТРЕННИХ ЭЛЕМЕНТОВ СЕРДЦА 
+  (полностью переработаны согласно требованиям)
+*/
+
+/* Core (внутренняя часть) */
 .like-icon .core {
-  transition: fill 0.3s linear;
-  fill: var(--main-background-color);
+  fill: transparent; /* Исправлено начальное состояние */
+  transition: fill 0.3s linear 0.03s; /* Указаны все параметры перехода */
 }
 
-/* Изменение цвета при наведении */
 .like-icon:hover .core {
   fill: var(--accent-color);
+  transition: fill 0.3s linear; /* Без задержки при hover */
 }
 
-/* Изменение цвета при активации */
 .like-icon:active .core {
   fill: var(--heart-fill-color);
+  transition: fill 0.3s linear; /* Без задержки при active */
 }
 
-/* Финал анимации - красное сердце */
 .like-icon.is-liked .core {
   fill: var(--heart-fill-color);
+  transition: fill 0.3s linear; /* Без задержки при лайке */
 }
 
-/* Аналогичные стили для основной части сердца */
+/* Main-body (основная часть) */
 .like-icon .main-body {
-  transition: fill 0.3s linear 0.05s; /* Задержка для эффекта заполнения */
-  fill: var(--main-background-color);
+  fill: transparent; /* Исправлено начальное состояние */
+  transition: fill 0.3s linear 0.05s; /* Задержка 0.05s */
 }
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
+  transition: fill 0.3s linear 0.05s; /* Сохраняем задержку */
 }
 
 .like-icon:active .main-body {
   fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0.05s; /* Сохраняем задержку */
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0.05s; /* Сохраняем задержку */
 }
 
-/* Контур сердца */
+/* Contour (контур) */
 .like-icon .contour {
   fill: var(--accent-color);
-  transition: fill 0.1s linear;
+  transition: fill 0.1s linear; /* Быстрая анимация */
 }
 
 .like-icon.is-liked .contour {
-  transition: fill 0.3s linear 0.06s;
   fill: var(--heart-fill-color);
-}
-
-/* Анимация для кнопки сохранения */
-.save-button {
-  transition: transform 0.3s ease;
-}
-
-.save-button:hover {
-  transform: scale(1.05);
-}
-
-.save-button:active {
-  transform: scale(0.95);
-}
-
-/* Анимация для иконки дискеты */
-.floppy-image {
-  transition: transform 0.3s ease;
-}
-
-.save-button:hover .floppy-image {
-  transform: translateY(-2px);
-}
-
-.save-button:active .floppy-image {
-  transform: translateY(1px);
+  transition: fill 0.3s linear 0.06s; /* Самая поздняя анимация */
 }

@@ -6,6 +6,7 @@
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./images/favicon.png" />
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" /> 
     <title>Закрывающий тег</title>
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
@@ -92,7 +93,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;/HTML&gt;</figcaption>
           <img
-            class="card-image image-invert"
+            class="card-image filter-invert"
             src="./images/Car.png"
             alt="Машинка с фильтром инверсии"
             loading="lazy"
@@ -156,7 +157,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;CSS&gt;</figcaption>
           <img
-            class="card-image image-rotate"
+            class="card-image filter-hue-rotate"
             src="./images/Car.png"
             alt="Машинка с фильтром вращения"
             loading="lazy"
@@ -218,7 +219,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;desigions&gt;</figcaption>
           <img
-            class="card-image image-opacity"
+            class="card-image filter-opacity"
             src="./images/Car.png"
             alt="Машинка с фильтром прозрачности"
             loading="lazy"
@@ -282,7 +283,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;care&gt;</figcaption>
           <img
-            class="card-image image-saturate"
+            class="card-image filter-saturate"
             src="./images/Car.png"
             alt="Машинка с фильтром насыщенности"
             loading="lazy"
@@ -347,7 +348,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;support&gt;</figcaption>
           <img
-            class="card-image image-multiple"
+            class="card-image filter-multiple"
             src="./images/Car.png"
             alt="Машинка с комбинированным эффектом"
             loading="lazy"
@@ -409,7 +410,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;lifes-style: none;&gt;</figcaption>
           <img
-            class="card-image image-sepia"
+            class="card-image filter-sepia"
             src="./images/Car.png"
             alt="Машинка с фильтром сепии"
             loading="lazy"
@@ -473,7 +474,7 @@
         <figure class="card-wrapper">
           <figcaption class="card-label">&lt;experience&gt;</figcaption>
           <img
-            class="card-image image-grayscale"
+            class="card-image filter-grayscale"
             src="./images/Car.png"
             alt="машинка не полностью черно-белая"
             loading="lazy"
@@ -535,42 +536,33 @@
         </div>
       </article>
 
-      <section class="save-button-block">
-        <button
-          type="button"
-          onclick="window.modal.showModal();"
-          aria-controls="modal"
-          class="button save-button"
-        >
-          <svg class="save-button-icon" viewBox="0 0 40 40" fill="currentColor">
-            <path
-              d="M.5.5h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm33-36v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm30 3v3h-3v-3zm-27 3v3h-3v-3zm0-3v3h-3v-3zm0 6v3h-3v-3zm21-3v3h-3v-3zm0-3v3h-3v-3zm0 6v3h-3v-3zm-6-3v3h-3v-3zm0-3v3h-3v-3zm0 6v3h-3v-3zm6 3v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm24 9v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm24 3v3h-3v-3zm-24 0v3h-3v-3zm24 3v3h-3v-3zm-24 0v3h-3v-3zm24 3v3h-3v-3zm-24 0v3h-3v-3zm0 3v3h-3v-3zm24 0v3h-3v-3zm3 3v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm33 3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3z"
-            />
-          </svg>
+<div class="save-button-block">
+  <button 
+    type="button" 
+    onclick="window.modal.showModal();" 
+    aria-controls="modal" 
+    class="button save-button" 
+  > 
+    <svg class="save-button-icon" viewBox="0 0 40 40" aria-hidden="true">
+      <use href="./svg/icons.svg#icon-save" />
+    </svg>
+    <span class="button__text">Сохранить на память</span> 
+  </button>
+</div>
 
-          <span class="button__text">Сохранить на память</span>
-        </button>
-
-        <dialog class="modal" id="modal">
-          <div class="modal-box">
-            <svg
-              class="modal-save-icon"
-              viewBox="0 0 40 40"
-              fill="currentColor"
-            >
-              <path
-                d="M.5.5h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm33-36v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm30 3v3h-3v-3zm-27 3v3h-3v-3zm0-3v3h-3v-3zm0 6v3h-3v-3zm21-3v3h-3v-3zm0-3v3h-3v-3zm0 6v3h-3v-3zm-6-3v3h-3v-3zm0-3v3h-3v-3zm0 6v3h-3v-3zm6 3v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm24 9v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm24 3v3h-3v-3zm-24 0v3h-3v-3zm24 3v3h-3v-3zm-24 0v3h-3v-3zm24 3v3h-3v-3zm-24 0v3h-3v-3zm0 3v3h-3v-3zm24 0v3h-3v-3zm3 3v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm-3 0v3h-3v-3zm33 3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3zm0-3h-3v-3h3z"
-              />
-            </svg>
-
-            <p class="modal-title">Вставьте дискету, чтобы продолжить</p>
-          </div>
-          <form method="dialog">
-            <button type="submit" class="modal-save-button button">
-              <span class="button__text submit_button">ок</span>
-            </button>
-          </form>
-        </dialog>
+<dialog class="modal" id="modal">
+  <div class="modal-box">
+    <svg class="modal-save-icon" viewBox="0 0 40 40" aria-hidden="true">
+      <use href="./svg/icons.svg#icon-save" />
+    </svg>
+    <p class="modal-title">Вставьте дискету, чтобы продолжить</p>
+  </div>
+  <form method="dialog">
+    <button type="submit" class="modal-save-button button">
+      <span class="button__text">OK</span>
+    </button>
+  </form>
+</dialog>
       </section>
     </main>
     <script src="./scripts/like.js"></script>
