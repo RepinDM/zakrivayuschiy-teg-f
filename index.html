@@ -536,34 +536,33 @@
         </div>
       </article>
 
-<div class="save-button-block">
-  <button 
-    type="button" 
-    onclick="window.modal.showModal();" 
-    aria-controls="modal" 
-    class="button save-button" 
-  > 
-    <svg class="save-button-icon" viewBox="0 0 40 40" aria-hidden="true">
-      <use href="./svg/icons.svg#icon-save" />
-    </svg>
-    <span class="button__text">Сохранить на память</span> 
-  </button>
-</div>
-
-<dialog class="modal" id="modal">
-  <div class="modal-box">
-    <svg class="modal-save-icon" viewBox="0 0 40 40" aria-hidden="true">
-      <use href="./svg/icons.svg#icon-save" />
-    </svg>
-    <p class="modal-title">Вставьте дискету, чтобы продолжить</p>
-  </div>
-  <form method="dialog">
-    <button type="submit" class="modal-save-button button">
-      <span class="button__text">OK</span>
-    </button>
-  </form>
-</dialog>
+      <div class="save-button-block">
+        <button 
+          type="button" 
+          onclick="window.modal.showModal();" 
+          aria-controls="modal" 
+          class="button save-button" 
+        > 
+          <svg class="save-button-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="./svg/icons.svg#icon-save" />
+          </svg>
+          <span class="button__text">Сохранить на память</span> 
+        </button>
       </div>
+      
+      <dialog class="modal" id="modal">
+        <div class="modal-box">
+          <svg class="modal-save-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="./svg/icons.svg#icon-save" />
+          </svg>
+          <p class="modal-title">Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <form method="dialog">
+          <button type="submit" class="modal-save-button button">
+            <span class="button__text">OK</span>
+          </button>
+        </form>
+      </dialog>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
